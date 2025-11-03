@@ -158,6 +158,128 @@ section.animacao > div {
   background-color: #16a085;
 }
 
+/*experiencia*/
+
+/* Estilos para a Linha do Tempo (Experiência) */
+.timeline-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Linha Vertical da Timeline - Cor mais suave para o fundo escuro */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #4b5563; /* Cor da borda do form, um cinza escuro */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    z-index: 0;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    z-index: 1;
+}
+
+/* Ícone de Círculo da Timeline - Usando a cor de destaque clara */
+.timeline-icon {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    border-radius: 50%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Novas cores para harmonizar */
+    background-color: #ebdcc4; /* Cor clara do site */
+    color: rgb(var(--bs-dark-rgb)); /* Texto escuro */
+    box-shadow: 0 0 0 5px rgb(var(--bs-dark-rgb)); /* Borda para destacar no fundo */
+}
+
+/* Item à Esquerda */
+.timeline-item-left {
+    left: 0;
+}
+
+.timeline-item-left .timeline-icon {
+    right: -20px;
+}
+
+/* Item à Direita */
+.timeline-item-right {
+    left: 50%;
+}
+
+.timeline-item-right .timeline-icon {
+    left: -20px;
+}
+
+/* Seta dos Cards - Mantendo a cor do card (custom-gray-dark-rgb) */
+.timeline-item .card::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    border: medium solid rgb(var(--custom-gray-dark-rgb));
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent rgb(var(--custom-gray-dark-rgb));
+}
+
+.timeline-item-left .card::before {
+    right: -10px;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent rgb(var(--custom-gray-dark-rgb));
+}
+
+.timeline-item-right .card::before {
+    left: -10px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent rgb(var(--custom-gray-dark-rgb)) transparent transparent;
+}
+
+/* Responsividade (Para telas menores que 768px - Mobile) */
+@media screen and (max-width: 768px) {
+    /* Esconde a linha central e move tudo para a esquerda */
+    .timeline-container::after {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .timeline-item-right {
+        left: 0%;
+    }
+    
+    /* Move o ícone e a seta para o lado esquerdo */
+    .timeline-item-left .timeline-icon,
+    .timeline-item-right .timeline-icon {
+        left: 15px;
+    }
+    
+    .timeline-item-left .card::before,
+    .timeline-item-right .card::before {
+        left: 60px;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent rgb(var(--custom-gray-dark-rgb)) transparent transparent;
+    }
+}
+/* Fim dos Estilos da Linha do Tempo */
+
+
 /* Footer */
 
 footer {
