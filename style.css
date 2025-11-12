@@ -1,0 +1,91 @@
+ 
+        :root {
+            --bs-dark-rgb: 17, 24, 39; 
+            --custom-gray-dark-rgb: 31, 41, 55; 
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+         body {
+            background-color: rgb(var(--bs-dark-rgb));
+            color: #d1d5db; /* text-gray-300 */
+        }
+        
+        /* Define a cor de fundo para seções específicas */
+        .bg-gray-custom {
+            background-color: rgb(var(--custom-gray-dark-rgb));
+        }
+
+        
+         #inicio {
+            min-height: 100vh;
+            background-image: url('./certo.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        /* Sobreposição escura para legibilidade do texto */
+        #inicio::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        /* Garante que o conteúdo fique acima da sobreposição */
+        #inicio .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+        }
+        
+        
+        .form-control {
+            background-color: #374151; 
+            border-color: #4b5563; 
+            color: #d1d5db;
+        }
+
+        .form-control:focus {
+            background-color: #374151;
+            border-color: #6366f1; /* Cor de foco (indigo) */
+            color: #d1d5db;
+            box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+        }
+
+        /* Cores dos ícones de habilidades */
+        .text-html { color: #f97316; }
+        .text-css { color: #3b82f6; }
+        .text-js { color: #facc15; }
+        .text-bootstrap { color: #7a4be7; }
+        .text-figma { color: #ec4899; }
+        .text-python { color: #226ec5; }
+        .text-java { color: #f48709; }
+        .text-csharp { color: #a855f7; }
+        .text-mysql { color: #08ccea; }
+        .text-kotlin { color: #2dcd3d; }
+        .text-c { color: #64748b; }
+        .text-streamlit { color: #cc2727; }
+        
+        .card-img-top {
+            width: 100%;
+            height: 225px;
+            object-fit: cover;
+        }
